@@ -1,0 +1,22 @@
+<html>
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+  <button id="btn">start the messages...</button>
+  <script>
+  var socket = io();
+
+
+  $("#btn").on("click",function() {
+    console.log("clicked!");
+    if (socket) {
+      console.log("emit a start now");
+      socket.emit("start",{});
+    }
+  });
+
+  </script>
+</body>
+</html>
